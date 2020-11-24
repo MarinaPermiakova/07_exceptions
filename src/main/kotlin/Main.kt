@@ -1,104 +1,110 @@
-import WallService;
+
 fun main() {
     val original = Post(
         id = 22,
-        owner_id = 111,
-        from_id = 21,
-        created_by = 22,
+        ownerId = 111,
+        fromId = 21,
+        createdBy = 22,
         date = 22,
         text = "Hello, world!",
-        reply_owner_id = 33,
-        reply_post_id = 33,
-        friends_only = 1,
+        replyOwnerId = 33,
+        replyPostId = 33,
+        friendsOnly = 1,
         comments = Comments(
             count = 9845,
-            can_post = false,
-            groups_can_post = true,
-            can_close = true,
-            can_open = true
+            canPost = false,
+            groupsCanPost = true,
+            canClose = true,
+            canOpen = true
         ),
         copyright = "Piotr",
         likes = Likes(
             count = 2,
-            user_likes = true,
-            can_like = true,
-            can_publish = true
+            userLikes = true,
+            canLike = true,
+            canPublish = true
         ),
         reposts = Reposts(
             count = 3,
-            user_reposted = false
+            userReposted = false
         ),
         views = Views(
             count = 3458
         ),
-        post_type = "message",
-        signer_id = 65,
-        can_pin = true,
-        can_delete = true,
-        can_edit = true,
-        is_pinned = true,
-        marked_as_ads = true,
-        is_favorite = true,
-        postponed_id = 44
+        postType = "message",
+        postSource = null,
+        geo = null,
+        signerId = 65,
+        copyHistory = arrayOf(2, 4),
+        canPin = true,
+        canDelete = true,
+        canEdit = true,
+        isPinned = true,
+        markedAsAds = true,
+        isFavorite = true,
+        postponedId = 44
     )
 
     val originalUpdated = Post(
         id = 1,
-        owner_id = 200,
-        from_id = 21,
-        created_by = 22,
+        ownerId = 200,
+        fromId = 21,
+        createdBy = 22,
         date = 555,
         text = "Hello, cosmos!",
-        reply_owner_id = 33,
-        reply_post_id = 33,
-        friends_only = 1,
+        replyOwnerId = 33,
+        replyPostId = 33,
+        friendsOnly = 1,
         comments = Comments(
             count = 9845,
-            can_post = false,
-            groups_can_post = true,
-            can_close = true,
-            can_open = true
+            canPost = false,
+            groupsCanPost = true,
+            canClose = true,
+            canOpen = true
         ),
         copyright = "Vladimir",
         likes = Likes(
             count = 2,
-            user_likes = true,
-            can_like = true,
-            can_publish = true
+            userLikes = true,
+            canLike = true,
+            canPublish = true
         ),
         reposts = Reposts(
             count = 3,
-            user_reposted = false
+            userReposted = false
         ),
         views = Views(
             count = 3458
         ),
-        post_type = "message",
-        signer_id = 65,
-        can_pin = true,
-        can_delete = true,
-        can_edit = true,
-        is_pinned = true,
-        marked_as_ads = true,
-        is_favorite = true,
-        postponed_id = 44
+        postType = "message",
+        postSource = null,
+        geo = null,
+        signerId = 65,
+        copyHistory = arrayOf(2, 4),
+        canPin = true,
+        canDelete = true,
+        canEdit = true,
+        isPinned = true,
+        markedAsAds = true,
+        isFavorite = true,
+        postponedId = 44
     )
 
     val comment = Comment(
         id = 111,
-        from_id = 45,
+        fromId = 45,
         date = 777,
         text = "hello",
-        reply_to_user = 4,
-        reply_to_comment = 8,
+        replyToUser = 4,
+        replyToComment = 8,
         attachments = null,
-        parents_stack = arrayOf(5, 6),
+        parentsStack = arrayOf(5, 6),
         thread = Threads (
             count = 5,
             items = arrayOf(45, 88),
-            can_post = false,
-            show_reply_button = true,
-            groups_can_post = true
+            canPost = false,
+            showReplyButton = true,
+            groupsCanPost = true
             )
     )
 

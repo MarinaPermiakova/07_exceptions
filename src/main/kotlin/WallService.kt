@@ -2,17 +2,24 @@ object WallService {
     private var posts = emptyArray<Post>()
     private var comments = emptyArray<Comment>()
 
-    fun createComment(comment: Comment): Comment {
-        for (e in posts)
-            if (e.id == comment.id)
-                comments += comment
+    fun createComment(comment: Comment) {
 
-            else  throw PostNotFoundException ("no post with id $comment.id")
-        return comments.last()
+        var foundId = false
+
+        for (e in posts) {
+            if (e.id == comment.id) {
+                comments += comment
+                foundId = true
+                break
+            }
+        }
+
+        if (!foundId) throw PostNotFoundException("no post with id $comment.id")
+
     }
 
-    class PostNotFoundException (s: String): RuntimeException(s)
-    
+    class PostNotFoundException(s: String) : RuntimeException(s)
+
     fun add(post: Post): Post {
         post.id = if (posts.isNotEmpty())
             posts.last().id + 1
@@ -31,7 +38,7 @@ object WallService {
         }
         if (index == -1) res = false
         else {
-            post.owner_id = posts[index].owner_id
+            post.ownerId = posts[index].ownerId
             post.date = posts[index].date
             posts[index] = post
         }
